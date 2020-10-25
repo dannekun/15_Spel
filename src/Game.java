@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Daniel Bojic
@@ -119,4 +120,21 @@ public class Game extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
     }
+
+    //Används för att blanda alla nummer
+    public int[] randomNumber() {
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0};
+        Random r = new Random();
+
+        for (int i = 0; i < array.length; i++) {
+            int randomIndexToSwap = r.nextInt(array.length);
+            int temp = array[randomIndexToSwap];
+            array[randomIndexToSwap] = array[i];
+            array[i] = temp;
+        }
+        return array;
+    }
+
+
+
 }
