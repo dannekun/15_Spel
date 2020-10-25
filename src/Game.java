@@ -135,6 +135,16 @@ public class Game extends JFrame implements ActionListener {
         return array;
     }
 
-
+    //Om allt är i ordning får man ett meddelande att man har vunnit
+    public void win() {
+        if (b1.getText().equals("1") && b2.getText().equals("2") && b3.getText().equals("3") && b4.getText().equals("4") &&
+                b5.getText().equals("5") && b6.getText().equals("6") && b7.getText().equals("7") && b8.getText().equals("8") &&
+                b9.getText().equals("9") && b10.getText().equals("10") && b11.getText().equals("11") && b12.getText().equals("12") &&
+                b13.getText().equals("13") && b14.getText().equals("14") && b15.getText().equals("15")) {
+            youWin.setText("Grattis, du vann!");
+        } else {
+            youWin.setText("");
+        }
+    }
 
 }
