@@ -126,7 +126,57 @@ public class Game extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource() == b1) {
+            List<JButton> tempList = Arrays.asList(b2, b5, b6);
+            findEmptyFromList(b1, tempList);
+        } else if (e.getSource() == b2) {
+            List<JButton> tempList = Arrays.asList(b1, b3, b5, b6, b7);
+            findEmptyFromList(b2, tempList);
+        } else if (e.getSource() == b3) {
+            List<JButton> tempList = Arrays.asList(b2, b4, b6, b7, b8);
+            findEmptyFromList(b3, tempList);
+        } else if (e.getSource() == b4) {
+            List<JButton> tempList = Arrays.asList(b3, b7, b8);
+            findEmptyFromList(b4, tempList);
+        } else if (e.getSource() == b5) {
+            List<JButton> tempList = Arrays.asList(b1, b2, b6, b9, b10);
+            findEmptyFromList(b5, tempList);
+        } else if (e.getSource() == b6) {
+            List<JButton> tempList = Arrays.asList(b1, b2, b3, b5, b7, b9, b10, b11);
+            findEmptyFromList(b6, tempList);
+        } else if (e.getSource() == b7) {
+            List<JButton> tempList = Arrays.asList(b2, b3, b4, b6, b8, b10, b11, b12);
+            findEmptyFromList(b7, tempList);
+        } else if (e.getSource() == b8) {
+            List<JButton> tempList = Arrays.asList(b3, b4, b7, b11, b12);
+            findEmptyFromList(b8, tempList);
+        } else if (e.getSource() == b9) {
+            List<JButton> tempList = Arrays.asList(b5, b6, b10, b13, b14);
+            findEmptyFromList(b9, tempList);
+        } else if (e.getSource() == b10) {
+            List<JButton> tempList = Arrays.asList(b5, b6, b7, b9, b11, b13, b14, b15);
+            findEmptyFromList(b10, tempList);
+        } else if (e.getSource() == b11) {
+            List<JButton> tempList = Arrays.asList(b6, b7, b8, b10, b12, b14, b15, b16);
+            findEmptyFromList(b11, tempList);
+        } else if (e.getSource() == b12) {
+            List<JButton> tempList = Arrays.asList(b7, b8, b11, b15, b16);
+            findEmptyFromList(b12, tempList);
+        } else if (e.getSource() == b13) {
+            List<JButton> tempList = Arrays.asList(b9, b10, b14);
+            findEmptyFromList(b13, tempList);
+        } else if (e.getSource() == b14) {
+            List<JButton> tempList = Arrays.asList(b9, b10, b11, b13, b15);
+            findEmptyFromList(b14, tempList);
+        } else if (e.getSource() == b15) {
+            List<JButton> tempList = Arrays.asList(b10, b11, b12, b14, b16);
+            findEmptyFromList(b15, tempList);
+        } else if (e.getSource() == b16) {
+            List<JButton> tempList = Arrays.asList(b11, b12, b15);
+            findEmptyFromList(b16, tempList);
+        } else if (e.getSource() == newGame) {
+            random(buttons);
+        }
     }
 
     //Hittar vilken knapp från en lista som innehåller 0 och gömmer den
