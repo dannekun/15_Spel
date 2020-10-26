@@ -129,6 +129,21 @@ public class Game extends JFrame implements ActionListener {
 
     }
 
+    //Hittar vilken knapp från en lista som innehåller 0 och gömmer den
+    public void findEmptyFromList(JButton button, List<JButton> findButton) {
+        JButton temp = null;
+        boolean didYouFind = false;
+        for (JButton b : findButton) {
+            if (b.getText().equals("0")) {
+                temp = b;
+                didYouFind = true;
+            }
+        }
+        if (didYouFind == true) {
+            changeValue(button, temp);
+        }
+    }
+
     //Skapar nytt spel med ordning för presentation
     public void presentation(List<JButton> tempbutton){
         int i = 1;
