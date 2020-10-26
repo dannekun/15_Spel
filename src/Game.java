@@ -42,13 +42,13 @@ public class Game extends JFrame implements ActionListener {
     JButton b15 = new JButton();
     JButton b16 = new JButton();
 
-
+    //Lista med alla knappar
     List<JButton> buttons = Arrays.asList(b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15, b16);
 
     public void mainGame() {
 
 
-
+        //Layout
         p.setLayout(new GridLayout(4, 4));
         p2.setLayout(new GridLayout(1, 2));
         f.add(p, BorderLayout.NORTH);
@@ -79,7 +79,15 @@ public class Game extends JFrame implements ActionListener {
 
 
 
+        //ANVÄND FÖR PRESENTATION
+        //Startar spelet med alla knappar i ordning
+        presentation(buttons);
 
+        //Startar spelet i random ordning
+        //random(buttons);
+
+
+        //Actionlisteners för alla knappar
         b1.addActionListener(this);
         b2.addActionListener(this);
         b3.addActionListener(this);
@@ -120,6 +128,39 @@ public class Game extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
     }
+
+    //Skapar nytt spel med ordning för presentation
+    public void presentation(List<JButton> tempbutton){
+        int i = 1;
+        for (JButton b : tempbutton){
+            if (i == 16){
+                i=0;
+                b.setVisible(false);
+            }else {
+                b.setVisible(true);
+            }
+            b.setText(String.valueOf(i));
+            i++;
+        }
+    }
+
+
+    //Skapar ett nytt spel med random ordning
+    public void random(List<JButton> tempButton) {
+        int[] array = randomNumber();
+
+        int i = 0;
+        for (JButton b : tempButton) {
+            b.setText(String.valueOf(array[i]));
+            if (b.getText().equals("0")){
+                b.setVisible(false);
+            }else {
+                b.setVisible(true);
+            }
+            i++;
+        }
+    }
+
 
     //Används för att blanda alla nummer
     public int[] randomNumber() {
