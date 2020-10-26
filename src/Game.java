@@ -176,6 +176,15 @@ public class Game extends JFrame implements ActionListener {
         return array;
     }
 
+    //Byter värden på två knappar så de kan flytta på sig
+    public void changeValue(JButton button1, JButton button2) {
+        button2.setText(button1.getText());
+        button1.setText("0");
+        button2.setVisible(true);
+        button1.setVisible(false);
+        win();
+    }
+
     //Om allt är i ordning får man ett meddelande att man har vunnit
     public void win() {
         if (b1.getText().equals("1") && b2.getText().equals("2") && b3.getText().equals("3") && b4.getText().equals("4") &&
