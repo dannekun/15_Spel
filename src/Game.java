@@ -78,7 +78,6 @@ public class Game extends JFrame implements ActionListener {
         p.add(b16);
 
 
-
         //ANVÄND FÖR PRESENTATION
         //Startar spelet med alla knappar i ordning
         presentation(buttons);
@@ -117,12 +116,6 @@ public class Game extends JFrame implements ActionListener {
         f.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
     }
-
-
-
-
-
-
 
     @Override
     public void actionPerformed(ActionEvent e) {
